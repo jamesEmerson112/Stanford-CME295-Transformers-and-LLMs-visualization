@@ -1,0 +1,697 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+  color: #e0e0e0;
+}
+
+.app-container {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header-compact {
+  flex-shrink: 0;
+  background: rgba(20, 20, 40, 0.95);
+  border-bottom: 1px solid #3a3a5a;
+}
+
+.header-top {
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.header-top h1 {
+  font-size: 1.5rem;
+  color: #ff7f50;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 20px 0;
+  background: rgba(25, 25, 45, 0.9);
+}
+
+.tab-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(40, 40, 60, 0.6);
+  border: none;
+  border-radius: 8px 8px 0 0;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 100px;
+}
+
+.tab-button:hover {
+  background: rgba(60, 60, 80, 0.8);
+  color: #ccc;
+}
+
+.tab-button.active {
+  background: rgba(255, 127, 80, 0.2);
+  color: #ff7f50;
+  border-bottom: 2px solid #ff7f50;
+}
+
+.tab-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #3a3a5a;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.tab-button.active .tab-number {
+  background: #ff7f50;
+  color: #1a1a2e;
+}
+
+.tab-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* Bottom Bar */
+.bottom-bar {
+  flex-shrink: 0;
+  background: rgba(20, 20, 40, 0.95);
+  border-top: 1px solid #3a3a5a;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.tab-info {
+  color: #ff7f50;
+  font-weight: 500;
+  min-width: 250px;
+  text-align: center;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff7f50 0%, #ff6347 100%);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 127, 80, 0.3);
+}
+
+.btn-secondary {
+  background: rgba(60, 60, 80, 0.8);
+  color: #e0e0e0;
+  border: 1px solid #3a3a5a;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(80, 80, 100, 0.8);
+  border-color: #ff7f50;
+}
+
+/* Content Cards */
+.math-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content-card {
+  background: rgba(30, 30, 50, 0.6);
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid #3a3a5a;
+}
+
+.content-card h3 {
+  color: #ff7f50;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.explanation-block {
+  background: rgba(40, 40, 60, 0.5);
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.explanation-block p {
+  margin: 8px 0;
+}
+
+/* Tab 0: 2D Pairs */
+.visual-diagram {
+  margin: 25px 0;
+}
+
+.dimension-split {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.original-embedding, .paired-embeddings {
+  background: rgba(40, 40, 60, 0.4);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.label {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.dimension-row {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.dim-box {
+  width: 45px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(60, 60, 80, 0.8);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: 'Times New Roman', serif;
+}
+
+.dim-box.highlight {
+  background: rgba(255, 127, 80, 0.3);
+  border: 1px solid #ff7f50;
+}
+
+.arrow-down {
+  color: #4ade80;
+  font-size: 0.9rem;
+}
+
+.paired-embeddings {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pair-group {
+  background: rgba(50, 50, 70, 0.6);
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.pair-group:hover {
+  background: rgba(60, 60, 80, 0.8);
+}
+
+.pair-group.selected {
+  border-color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+}
+
+.pair-label {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.pair-dims {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.rotation-label {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ffd700;
+  margin-top: 8px;
+  font-family: 'Times New Roman', serif;
+}
+
+.why-not-3d {
+  margin-top: 30px;
+}
+
+.why-not-3d h4 {
+  color: #ffd700;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.comparison-item {
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.comparison-item.good {
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid #4ade80;
+}
+
+.comparison-item.bad {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+}
+
+.comparison-item .icon {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.comparison-item.good .icon { color: #4ade80; }
+.comparison-item.bad .icon { color: #ef4444; }
+
+.comparison-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.comparison-item li {
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Tab 1: Frequencies */
+.formula-box {
+  font-family: 'Times New Roman', serif;
+  font-size: 1.3rem;
+  color: #ffd700;
+  text-align: center;
+  margin: 15px 0;
+  padding: 10px;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 8px;
+}
+
+.frequency-visual {
+  margin: 25px 0;
+}
+
+.circles-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.frequency-circle {
+  text-align: center;
+  background: rgba(40, 40, 60, 0.5);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.circle-label {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.freq-value {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #4ade80;
+  margin-top: 8px;
+}
+
+.freq-desc {
+  font-size: 0.75rem;
+  color: #ff7f50;
+  margin-top: 4px;
+}
+
+.frequency-insight {
+  margin-top: 25px;
+}
+
+.frequency-insight h4 {
+  color: #ffd700;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.insight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.insight-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(40, 40, 60, 0.5);
+  border-radius: 8px;
+}
+
+.insight-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.insight-icon.slow {
+  background: linear-gradient(135deg, #ff7f50, #ff6347);
+}
+
+.insight-icon.fast {
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+}
+
+.insight-text strong {
+  color: #e0e0e0;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.insight-text p {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.analogy {
+  background: rgba(255, 127, 80, 0.1);
+  border: 1px solid #ff7f50;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.9rem;
+}
+
+/* Tab 2: Derivation */
+.derivation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.derivation-step {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(40, 40, 60, 0.5);
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s ease-out;
+}
+
+.derivation-step.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.derivation-step.final {
+  background: rgba(74, 222, 128, 0.15);
+  border: 1px solid #4ade80;
+}
+
+.step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ff7f50;
+  color: #1a1a2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.derivation-step.final .step-num {
+  background: #4ade80;
+}
+
+.step-formula {
+  font-family: 'Times New Roman', serif;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  flex: 1;
+}
+
+.step-desc {
+  font-size: 0.8rem;
+  color: #888;
+  max-width: 200px;
+  text-align: right;
+}
+
+.key-result {
+  background: linear-gradient(135deg, rgba(255, 127, 80, 0.15), rgba(74, 222, 128, 0.15));
+  border: 2px solid #4ade80;
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+  margin: 25px 0;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.result-label {
+  color: #ffd700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.result-formula {
+  font-family: 'Times New Roman', serif;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.result-insight {
+  color: #4ade80;
+  font-size: 1rem;
+}
+
+.highlight {
+  color: #4ade80;
+  font-weight: bold;
+  background: rgba(74, 222, 128, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.math-key {
+  margin-top: 25px;
+}
+
+.math-key h4 {
+  color: #ffd700;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.property-box {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid #ffd700;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.property-formula {
+  font-family: 'Times New Roman', serif;
+  font-size: 1.3rem;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.property-box p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Tab 3: Benefits */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.benefit-card {
+  background: rgba(40, 40, 60, 0.6);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #3a3a5a;
+  transition: all 0.2s;
+}
+
+.benefit-card:hover {
+  border-color: #ff7f50;
+  transform: translateY(-2px);
+}
+
+.benefit-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff7f50, #ff6347);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.benefit-card h4 {
+  color: #ff7f50;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.benefit-card p {
+  color: #aaa;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.usage-note {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.usage-note h4 {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.model-tags {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.model-tag {
+  background: rgba(255, 127, 80, 0.2);
+  color: #ff7f50;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .comparison-grid,
+  .insight-grid,
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .circles-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab-button {
+    min-width: 70px;
+    padding: 8px 12px;
+  }
+
+  .tab-label {
+    font-size: 0.7rem;
+  }
+}

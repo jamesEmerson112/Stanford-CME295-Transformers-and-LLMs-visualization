@@ -7,9 +7,13 @@
     "dev": "cross-env PROJECT=architecture vite",
     "dev:architecture": "cross-env PROJECT=architecture vite",
     "dev:attention": "cross-env PROJECT=attention vite",
-    "build": "cross-env PROJECT=architecture vite build && cross-env PROJECT=attention vite build",
+    "dev:rotary": "cross-env PROJECT=rotary vite",
+    "dev:ropemath": "cross-env PROJECT=ropemath vite",
+    "build": "cross-env PROJECT=architecture vite build && cross-env PROJECT=attention vite build && cross-env PROJECT=rotary vite build && cross-env PROJECT=ropemath vite build",
     "build:architecture": "cross-env PROJECT=architecture vite build",
     "build:attention": "cross-env PROJECT=attention vite build",
+    "build:rotary": "cross-env PROJECT=rotary vite build",
+    "build:ropemath": "cross-env PROJECT=ropemath vite build",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -29,11 +29,8 @@ export default function App() {
       }, 2000)
       return () => clearTimeout(timer)
     } else if (isPlaying && currentStep >= maxSteps) {
-      // Pause at end, then restart loop
-      const timer = setTimeout(() => {
-        setCurrentStep(0)
-      }, 3000) // 3 second pause before restarting
-      return () => clearTimeout(timer)
+      // Stop playing at end
+      setIsPlaying(false)
     }
   }, [isPlaying, currentStep, maxSteps])
 

@@ -6,13 +6,15 @@ const project = process.env.PROJECT || 'architecture'
 
 const projectPaths = {
   architecture: './lecture 1 architecture visualization',
-  attention: './lecture 1 attention mechanism'
+  attention: './lecture 1 attention mechanism',
+  rotary: './lecture 2 rotary position embeddings',
+  ropemath: './lecture 2b rope math'
 }
 
 export default defineConfig({
   plugins: [react()],
   root: projectPaths[project] || projectPaths.architecture,
   build: {
-    outDir: project === 'architecture' ? '../../dist/architecture' : '../../dist/attention'
+    outDir: `../../dist/${project}`
   }
 })
