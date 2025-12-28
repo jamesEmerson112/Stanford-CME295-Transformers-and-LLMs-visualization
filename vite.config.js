@@ -8,7 +8,8 @@ const projectPaths = {
   architecture: './lecture 1 architecture visualization',
   attention: './lecture 1 attention mechanism',
   rotary: './lecture 2 rotary position embeddings',
-  ropemath: './lecture 2b rope math'
+  ropemath: './lecture 2b rope math',
+  similarity: './lecture 2c similarity methods'
 }
 
 export default defineConfig({
